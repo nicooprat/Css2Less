@@ -1,4 +1,5 @@
 require 'sinatra'
+require './css2less'
 
 get '/' do
   haml :index
@@ -8,5 +9,9 @@ post('/farandole') do
   if params[:css].empty?
     redirect '/'
   end
-  "Voila: #{params[:css]} !"
+  css = params[:css]
+  converter = Css2Less::Converter.new(css)
+  converter.generate_tree
+  converter.render_less
+  "Hello #{converter.get_less}!"
 end
