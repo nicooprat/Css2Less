@@ -1,7 +1,15 @@
-%form{ :action => "farandole", :method => "post"}
+%script{:type => "text/javascript",
+        :src  => "js/jquery.js"}
+%script{:type => "text/javascript",
+        :src  => "js/onload.js"}
+
+%form{ :action => "farandole", :method => "post", :id => "farandole"}
   %fieldset
     %ol
       %li
-        %label{:for => "css"} Message:
+        %label{:for => "css"} CSS:
         %textarea{:name => "css"}
+      %li
+        %label{:for => "less"} LESS:
+        %textarea{:name => "less"}
     %input{:type => "submit", :value => "Go", :class => "button"}

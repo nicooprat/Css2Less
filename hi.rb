@@ -13,5 +13,5 @@ post('/farandole') do
   converter = Css2Less::Converter.new(css)
   converter.generate_tree
   converter.render_less
-  "Hello #{converter.get_less}!"
+  "#{converter.get_less}"
 end
