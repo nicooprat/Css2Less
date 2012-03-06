@@ -1,0 +1,244 @@
+/* SUMMARY
+ *
+ * 1. Variables
+ * 2. Mixins
+ * 3. Containers
+ * 4. Text Styles
+ * 5. Common Classes
+ * 6. Pages
+ * 7. Hacks
+ * 8. Misc
+ *
+ */
+/* 1. Variables
+-------------------- */
+/* 2. Mixins
+-------------------- */
+/* 3. Containers
+-------------------- */
+html {
+  background: url(img/bg_html.jpg);
+  height: 100%;
+}
+html body {
+  overflow: hidden;
+  height: 100%;
+}
+html body #book {
+  height: 98%;
+  padding: 1%;
+}
+html body #book #wood {
+  background: url(img/wood.jpg);
+  height: 96%;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  border: 1px solid #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
+  -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
+  -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
+  position: relative;
+}
+html body #book #wood:after {
+  content: '';
+  display: block;
+  width: 200px;
+  position: absolute;
+  background: url(img/binding.jpg);
+  top: -4px;
+  left: 50%;
+  margin-left: -100px;
+  bottom: -4px;
+  z-index: 1;
+  border: 1px solid #000;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
+  -moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
+  -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
+  -o-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
+}
+html body #book #wood #paper {
+  background-image: url(img/clips.png), url(img/paper.jpg);
+  background-repeat: repeat-y, repeat;
+  background-position: center center , top left;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  height: 98%;
+  margin: .5% 1%;
+  position: relative;
+  z-index: 2;
+}
+html body #book #wood #paper:before,
+html body #book #wood #paper:after {
+  background-image: url(img/clips.png), url(img/paper.jpg);
+  background-repeat: repeat-y, repeat;
+  background-position: center center , top left;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  content: '';
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+  right: 2px;
+  bottom: -2px;
+  z-index: 1;
+}
+html body #book #wood #paper:before {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
+  -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
+  -o-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
+}
+html body #book #wood #paper:after {
+  top: -4px;
+  left: 4px;
+  right: 4px;
+  bottom: -4px;
+}
+html body #book #wood #paper #left,
+html body #book #wood #paper #right {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  z-index: 3;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+html body #book #wood #paper #left:after,
+html body #book #wood #paper #right:after {
+  content: '';
+  display: block;
+  width: 134px;
+  height: 54px;
+  position: absolute;
+  top: -1px;
+  right: 20px;
+  z-index: 2;
+}
+html body #book #wood #paper #left .ace_editor,
+html body #book #wood #paper #right .ace_editor {
+  top: 0;
+  left: 0;
+  right: 10px;
+  bottom: 0;
+  z-index: 1;
+  line-height: 1.5em;
+}
+html body #book #wood #paper #left .ace_editor .ace_gutter,
+html body #book #wood #paper #right .ace_editor .ace_gutter {
+  background: none;
+  color: rgba(0, 0, 0, 0.25);
+}
+html body #book #wood #paper #left {
+  left: 0;
+  right: 50%;
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.18) 60%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.15) 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(30%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0.18)), color-stop(85%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.15)));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.18) 60%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.15) 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.18) 60%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.15) 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.18) 60%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.15) 100%);
+  /* IE10+ */
+
+  background: linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.18) 60%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.15) 100%);
+  /* W3C */
+
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#00000000', endColorstr='#26000000', GradientType=1);
+  /* IE6-9 */
+
+}
+html body #book #wood #paper #left:after {
+  background: url(img/label_css.png);
+}
+html body #book #wood #paper #right {
+  left: 50%;
+  right: -4px;
+  background: -moz-linear-gradient(left, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.18) 40%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  /* FF3.6+ */
+
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(0, 0, 0, 0.15)), color-stop(10%, rgba(0, 0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0.18)), color-stop(70%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0)));
+  /* Chrome,Safari4+ */
+
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.18) 40%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  /* Chrome10+,Safari5.1+ */
+
+  background: -o-linear-gradient(left, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.18) 40%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  /* Opera 11.10+ */
+
+  background: -ms-linear-gradient(left, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.18) 40%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  /* IE10+ */
+
+  background: linear-gradient(left, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.18) 40%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0) 100%);
+  /* W3C */
+
+  filter: progid:dximagetransform.microsoft.gradient(startColorstr='#26000000', endColorstr='#00000000', GradientType=1);
+  /* IE6-9 */
+
+}
+html body #book #wood #paper #right:after {
+  background: url(img/label_less.png);
+}
+html body #book #wood #shadow img {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 35px;
+  left: 0;
+  bottom: -35px;
+}
+html body #editor {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+/* 4. Text
+-------------------- */
+/* 5. Common Classes
+-------------------- */
+.sheet {
+  background-image: url(img/clips.png), url(img/paper.jpg);
+  background-repeat: repeat-y, repeat;
+  background-position: center center , top left;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -o-border-radius: 3px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+}
+/* 6. Pages
+-------------------- */
+/* 7. Hacks
+-------------------- */
+/* 8. Misc
+-------------------- */

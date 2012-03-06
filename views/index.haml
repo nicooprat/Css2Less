@@ -1,15 +1,27 @@
-%script{:type => "text/javascript",
-        :src  => "js/jquery.js"}
-%script{:type => "text/javascript",
-        :src  => "js/onload.js"}
+!!!
+%html
+    %head
+  
+        %script{:type => "text/javascript", :src  => "js/jquery.js"}
+        %script{:type => "text/javascript", :src  => "js/ace/ace.js"}
+        %script{:type => "text/javascript", :src  => "js/ace/mode-scss.js"}
+        %script{:type => "text/javascript", :src  => "js/onload.js"}
 
-%form{ :action => "farandole", :method => "post", :id => "farandole"}
-  %fieldset
-    %ol
-      %li
-        %label{:for => "css"} CSS:
-        %textarea{:name => "css"}
-      %li
-        %label{:for => "less"} LESS:
-        %textarea{:name => "less"}
-    %input{:type => "submit", :value => "Go", :class => "button"}
+        %link(rel="stylesheet" href="css/reset.css")
+        %link(rel="stylesheet" href="css/style.css")
+        
+%body
+
+    #book
+        #wood
+            #paper
+                #left
+                    #input
+                #right
+                    #output
+            %p#shadow
+                %img{:alt => "", :src => "css/img/shadow.png"}/
+    
+    #example
+        #input
+            ldhflsdjfmsdjfm

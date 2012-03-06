@@ -5,7 +5,7 @@ get '/' do
   haml :index
 end
 
-post('/farandole') do
+post('/convert') do
   if params[:css].empty?
     redirect '/'
   end
