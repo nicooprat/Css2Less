@@ -5,8 +5,35 @@ module Css2Less
   
   class Converter
     
-    def initialize(css)
+    def initialize(css=nil)
+      if not css.nil?
+	@css = css
+      end
+      @tree = {}
+      @less = ''
+    end
+    
+    def process_less
+      if @css.nil?
+	return false
+      end
+      cleanup
+      generate_tree
+      render_less
+      return true
+    end
+    
+    def get_less
+      return @less
+    end
+    
+    def set_css(css)
       @css = css
+    end
+    
+    private
+    
+    def cleanup
       @tree = {}
       @less = ''
     end
@@ -41,15 +68,11 @@ module Css2Less
 	@less = @less + ' ' * indent + element + " {\n"
 	style = children.delete(:style)
 	if style
-	  @less = @less + style.split(';').map { |s| s.strip }.reject { |s| s.empty? }.map { |s| ' ' * (indent+2) + s + ';' }.join("\n")
+	  @less = @less + style.split(';').map { |s| s.strip }.reject { |s| s.empty? }.map { |s| ' ' * (indent+4) + s + ";" }.join("\n") + "\n"
 	end
-	render_less(children, indent + 2)
+	render_less(children, indent + 4)
 	@less = @less + ' ' * indent + "}\n"
       end
-    end
-    
-    def get_less
-      return @less
     end
     
   end

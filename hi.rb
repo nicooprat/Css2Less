@@ -11,7 +11,14 @@ post('/farandole') do
   end
   css = params[:css]
   converter = Css2Less::Converter.new(css)
-  converter.generate_tree
-  converter.render_less
+  converter.process_less
   "#{converter.get_less}"
+end
+
+not_found do
+  'This is nowhere to be found.'
+end
+
+error do
+  'Sorry there was a nasty error - ' + env['sinatra.error'].name
 end
