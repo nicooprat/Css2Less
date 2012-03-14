@@ -28,7 +28,6 @@ html {
 }
 html body {
   height: 100%;
-  -webkit-perspective: 1000;
   overflow: hidden;
 }
 html body #info {

@@ -25,6 +25,8 @@ $(document).ready(function() {
     
     // Flip
     
+    scroll2Top();
+    
     $('#info').click(function(e)
     {
         if( $('body').hasClass('flip') )
@@ -43,12 +45,17 @@ $(document).ready(function() {
         	},500);
             $('body').addClass('flip');
         }
-                
-        $('html,body').animate({scrollTop:0}, 'slow');
+        
+        scroll2Top();
         e.preventDefault();
     });
   
 });
+
+function scroll2Top()
+{
+    $('html,body').animate({scrollTop:0}, 'slow');
+}
 
 function convert()
 {
