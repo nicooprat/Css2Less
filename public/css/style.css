@@ -12,6 +12,11 @@
  */
 /* 1. Variables
 -------------------- */
+@font-face {
+  font-family: "Chunk Five";
+  src: url('fonts/Chunkfive.eot');
+  src: local('☺'), url('fonts/Chunkfive.eot?#iefix') format('embedded-opentype'), url('fonts/Chunkfive.woff') format('woff'), url('fonts/Chunkfive.ttf') format('truetype'), url('fonts/Chunkfive.svg#') format('svg'), url('fonts/Chunkfive.otf') format('opentype');
+}
 /* 2. Mixins
 -------------------- */
 /* 3. Containers
@@ -19,24 +24,102 @@
 html {
   background: url(img/bg_html.jpg);
   height: 100%;
+  max-width: 100%;
 }
 html body {
-  overflow: hidden;
   height: 100%;
+  -webkit-perspective: 1000;
+  overflow: hidden;
+}
+html body #info {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: url(img/info.png);
+  text-indent: -9000px;
+  z-index: 10;
+  opacity: .5;
+  transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -webkit-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
+}
+html body #info:hover {
+  opacity: 1;
+}
+html body #content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+html body #content h1 a {
+  display: block;
+  margin: 0 auto;
+  width: 601px;
+  height: 224px;
+  background: url(img/logo.png);
+  margin-bottom: -50px;
+}
+html body #content h2 {
+  font-family: "Chunk Five";
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.65);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+  margin: 1em 0;
+}
+html body #content p {
+  max-width: 80%;
+  margin: 0 auto;
+  font-size: 1.2em;
+  line-height: 1.8em;
+  margin-bottom: 1em;
+  font-family: Georgia;
+  color: rgba(0, 0, 0, 0.7);
+}
+html body #content p strong {
+  display: block;
+  font-weight: 900;
 }
 html body #book {
   height: 98%;
   padding: 1%;
+  position: relative;
+  z-index: 1;
+  opacity: 1;
+  transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+  -o-transform: scale(1);
+  transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
 }
 html body #book #wood {
   background: url(img/wood.jpg);
   height: 96%;
   border-radius: 3px;
+  -ms-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
   border: 1px solid #000;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
+  -ms-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
   -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
   -o-box-shadow: 0 0 5px rgba(0, 0, 0, 0.75), 0 0 2px #ad5b17 inset;
@@ -55,23 +138,28 @@ html body #book #wood:after {
   z-index: 1;
   border: 1px solid #000;
   border-radius: 3px;
+  -ms-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
   box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
+  -ms-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
   -moz-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
   -webkit-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
   -o-box-shadow: 0 0 2px rgba(255, 255, 255, 0.5) inset, 0 0 0;
 }
 html body #book #wood #paper {
+  background-color: #fff;
   background-image: url(img/clips.png), url(img/paper.jpg);
   background-repeat: repeat-y, repeat;
   background-position: center center , top left;
   border-radius: 3px;
+  -ms-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -ms-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
@@ -82,14 +170,17 @@ html body #book #wood #paper {
 }
 html body #book #wood #paper:before,
 html body #book #wood #paper:after {
+  background-color: #fff;
   background-image: url(img/clips.png), url(img/paper.jpg);
   background-repeat: repeat-y, repeat;
   background-position: center center , top left;
   border-radius: 3px;
+  -ms-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -ms-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
@@ -104,6 +195,7 @@ html body #book #wood #paper:after {
 }
 html body #book #wood #paper:before {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
+  -ms-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
   -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
   -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
   -o-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.75), 0 0 0;
@@ -121,6 +213,7 @@ html body #book #wood #paper #right {
   bottom: -4px;
   z-index: 3;
   border-radius: 3px;
+  -ms-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
@@ -133,7 +226,7 @@ html body #book #wood #paper #right:after {
   height: 54px;
   position: absolute;
   top: -1px;
-  right: 20px;
+  right: 40px;
   z-index: 2;
 }
 html body #book #wood #paper #left .ace_editor,
@@ -224,14 +317,17 @@ html body #editor {
 /* 5. Common Classes
 -------------------- */
 .sheet {
+  background-color: #fff;
   background-image: url(img/clips.png), url(img/paper.jpg);
   background-repeat: repeat-y, repeat;
   background-position: center center , top left;
   border-radius: 3px;
+  -ms-border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   -o-border-radius: 3px;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
+  -ms-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -moz-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -webkit-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
   -o-box-shadow: 0 0 2px rgba(0, 0, 0, 0.75), 0 0 0;
@@ -242,3 +338,20 @@ html body #editor {
 -------------------- */
 /* 8. Misc
 -------------------- */
+.ace_editor .ace_sb {
+  overflow-y: auto;
+}
+body.flip {
+  overflow-y: auto;
+}
+body.flip #content {
+  opacity: 1;
+}
+body.flip #book {
+  transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  opacity: 0;
+}

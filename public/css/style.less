@@ -35,6 +35,13 @@
 @transition: all .1s ease-in-out;
 @shadow: 0 1px 0 rgba(0,0,0,.5);
 
+// Fonts
+@font-face {
+    font-family: "Chunk Five";
+    src: url('fonts/Chunkfive.eot');
+    src: local('☺'), url('fonts/Chunkfive.eot?#iefix') format('embedded-opentype'), url('fonts/Chunkfive.woff') format('woff'), url('fonts/Chunkfive.ttf') format('truetype'), url('fonts/Chunkfive.svg#') format('svg'), url('fonts/Chunkfive.otf') format('opentype');
+}
+@chunk: "Chunk Five";
 
 
 /* 2. Mixins
@@ -44,6 +51,7 @@
 
 .borderRadius ( @val: @radius ) {
 	border-radius: @val;
+	-ms-border-radius: @val;
 	-moz-border-radius: @val;
 	-webkit-border-radius: @val;
 	-o-border-radius: @val;
@@ -51,22 +59,41 @@
 
 .boxShadow ( @string: @shadow , @string2: 0 0 0) {
 	box-shadow: @string , @string2;
+	-ms-box-shadow: @string , @string2;
 	-moz-box-shadow: @string , @string2;
 	-webkit-box-shadow: @string , @string2;
 	-o-box-shadow: @string , @string2;
 }
 
 .gradient( @start_color , @end_color ) {
+	background-image: -ms-gradient( linear, 0% 0%, 0% 100%, from( @start_color ), to( @end_color ) );
 	background-image: -moz-linear-gradient( center bottom, @end_color 0%, @start_color 100% );
 	background-image: -webkit-gradient( linear, 0% 0%, 0% 100%, from( @start_color ), to( @end_color ) );
 	background-image: -o-linear-gradient( @end_color , @start_color );
 }
 
-.transition( @trans: @transition ) {
+.transition( @trans ) {
 	transition: @trans;
+	-ms-transition: @trans;
 	-moz-transition: @trans;
 	-webkit-transition: @trans;
 	-o-transition: @trans;
+}
+
+.transform( @trans ) {
+	transform: @trans;
+	-ms-transform: @trans;
+	-moz-transform: @trans;
+	-webkit-transform: @trans;
+	-o-transform: @trans;
+}
+
+.animation( @anim ) {
+	animation: @anim;
+	-ms-animation: @anim;
+	-moz-animation: @anim;
+	-webkit-animation: @anim;
+	-o-animation: @anim;
 }
 
 
@@ -78,14 +105,82 @@
 html {
     background: url(img/bg_html.jpg);
     height: 100%;
+    max-width: 100%;
 
     body {
-        overflow: hidden;
         height: 100%;
+        -webkit-perspective: 1000;
+        overflow: hidden;
+        
+        #info {
+        	display: block;
+        	width: 50px;
+        	height: 50px;
+        	position: fixed;
+        	top: 0;
+        	left: 0;
+        	background: url(img/info.png);
+        	text-indent: -9000px;
+        	z-index: 10;
+        	opacity: .5;
+        	.transition( opacity .25s );
+        	
+        	&:hover {
+        		opacity: 1;
+        	}
+        }
+        
+        #content {
+        	position: absolute;
+        	top: 0;
+        	left: 0;
+        	right: 0;
+        	text-align: center;
+        	opacity: 0;
+        	
+        	.transition( all .5s );
+        	
+        	h1 a {
+        		display: block;
+        		margin: 0 auto;
+        		width: 601px;
+        		height: 224px;
+        		background: url(img/logo.png);
+        		margin-bottom: -50px;
+        	}
+        	
+        	h2 {
+        		font-family: @chunk;
+        		font-size: 2em;
+        		color: rgba(0,0,0,.65);
+        		text-shadow: 0 1px 0 rgba(255,255,255,.3);
+        		margin: 1em 0;
+        	}
+        	
+        	p {
+            	max-width: 80%;
+            	margin: 0 auto;
+        		font-size: 1.2em;
+        		line-height: 1.8em;
+        		margin-bottom: 1em;
+        		font-family: Georgia;
+        		color: rgba(0,0,0,.7);
+        		
+        		strong {
+        			display: block;
+        			font-weight: 900;
+        		}
+        	}
+        }
     
         #book {
             height: 98%;
             padding: 1%;
+            position: relative;
+            z-index: 1;
+            opacity: 1;
+            .transform( scale( 1 ) );
+            .transition( all .5s ease-in-out );
         	
         	#wood {
         		background: url(img/wood.jpg);
@@ -155,7 +250,7 @@ html {
             				height: 54px;
             				position: absolute;
             				top: -1px;
-            				right: 20px;
+            				right: 40px;
             				z-index: 2;
             			}
             			
@@ -243,6 +338,7 @@ html {
 
 
 .sheet {
+    background-color: #fff;
 	background-image: url(img/clips.png) , url(img/paper.jpg);
 	background-repeat: repeat-y , repeat;
 	background-position: center center , top left;
@@ -272,3 +368,19 @@ html {
 -------------------- */
 
 
+.ace_editor .ace_sb {
+	overflow-y: auto;
+}
+
+body.flip {
+    overflow-y: auto;
+
+    #content {
+    	opacity: 1;
+    }
+            
+    #book {
+        .transform( scale( 1.2 ) );
+        opacity: 0;
+    }
+}
