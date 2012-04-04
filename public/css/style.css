@@ -53,10 +53,12 @@ html body #info:hover {
 html body #content {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  margin-left: -30%;
   right: 0;
-  text-align: center;
+  text-align: left;
   opacity: 0;
+  width: 60%;
   transition: all 0.5s;
   -ms-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -77,15 +79,14 @@ html body #content h2 {
   font-size: 2em;
   color: #332817;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
-  margin: 1em 0;
+  margin: 1em 0 .5em;
 }
 html body #content p {
-  max-width: 80%;
   margin: 0 auto;
   font-size: 1.2em;
-  line-height: 1.8em;
+  line-height: 1.6em;
   margin-bottom: 1em;
-  font-family: Georgia;
+  font-family: Helvetica, sans-serif;
   color: rgba(0, 0, 0, 0.7);
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1);
 }
@@ -109,6 +110,7 @@ html body #book {
   position: relative;
   z-index: 1;
   opacity: 1;
+  -webkit-backface-visibility: hidden;
   transform: scale(1);
   -ms-transform: scale(1);
   -moz-transform: scale(1);
@@ -347,6 +349,9 @@ html body #editor {
 -------------------- */
 /* 7. Hacks
 -------------------- */
+#ie {
+  display: none;
+}
 /* 8. Misc
 -------------------- */
 .ace_editor .ace_sb {
