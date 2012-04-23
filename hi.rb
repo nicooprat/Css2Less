@@ -1,5 +1,5 @@
 require 'sinatra'
-require './css2less'
+require 'css2less'
 
 get '/' do
   haml :index
