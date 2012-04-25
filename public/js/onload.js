@@ -51,22 +51,14 @@ $(document).ready(function() {
     {
         if( $('body').hasClass('flip') )
         {
-        	$('#book').css('display','block');
-            setTimeout(function()
-        	{
-        	    $('body').removeClass('flip');
-        	},10);
+    	    $('body').removeClass('flip');
         }
         else
         {
-        	setTimeout(function()
-        	{
-        	    $('#book').css('display','none');
-        	},500);
             $('body').addClass('flip');
         }
         
-        scroll2Top();
+        //scroll2Top();
         e.preventDefault();
     });
   

@@ -1,3 +1,22 @@
+/*
+ * Copyright 2012 Thomas Pierson <contact@thomaspierson.fr> ,
+ *                Nicolas Prat <nicooprat@gmail.com>
+ *
+ * This file is part of Css2Less Web Site.
+ *
+ * Css2Less Web Site is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * Css2Less Web Site is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License
+ * along with Css2Less Web Site.  If not, see <http://www.gnu.org/licenses/>.
+ */
 /* SUMMARY
  *
  * 1. Variables
@@ -51,7 +70,7 @@ html body #info:hover {
   opacity: 1;
 }
 html body #content {
-  position: absolute;
+  position: relative;
   top: 0;
   left: 50%;
   margin-left: -30%;
@@ -59,11 +78,11 @@ html body #content {
   text-align: left;
   opacity: 0;
   width: 60%;
-  transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -webkit-transition: all 0.5s;
-  -o-transition: all 0.5s;
+  transition: all 1s;
+  -ms-transition: all 1s;
+  -moz-transition: all 1s;
+  -webkit-transition: all 1s;
+  -o-transition: all 1s;
 }
 html body #content h1 a {
   display: block;
@@ -107,20 +126,18 @@ html body #content p strong {
 html body #book {
   height: 98%;
   padding: 1%;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 1;
   opacity: 1;
-  -webkit-backface-visibility: hidden;
-  transform: scale(1);
-  -ms-transform: scale(1);
-  -moz-transform: scale(1);
-  -webkit-transform: scale(1);
-  -o-transform: scale(1);
-  transition: all 0.5s ease-in-out;
-  -ms-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
+  -ms-transition: all 1s ease-in-out;
+  -moz-transition: all 1s ease-in-out;
+  -webkit-transition: all 1s ease-in-out;
+  -o-transition: all 1s ease-in-out;
 }
 html body #book #wood {
   background: url(img/wood.jpg);
@@ -364,10 +381,9 @@ body.flip #content {
   opacity: 1;
 }
 body.flip #book {
-  transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  -moz-transform: scale(1.2);
-  -webkit-transform: scale(1.2);
-  -o-transform: scale(1.2);
-  opacity: 0;
+  transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -webkit-transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
 }
