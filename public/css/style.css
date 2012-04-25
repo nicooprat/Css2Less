@@ -70,14 +70,11 @@ html body #info:hover {
   opacity: 1;
 }
 html body #content {
-  position: relative;
-  top: 0;
-  left: 50%;
-  margin-left: -30%;
-  right: 0;
+  margin: 0 auto;
   text-align: left;
   opacity: 0;
   width: 60%;
+  padding-bottom: 50px;
   transition: all 1s;
   -ms-transition: all 1s;
   -moz-transition: all 1s;
@@ -375,15 +372,15 @@ html body #editor {
   overflow-y: auto;
 }
 body.flip {
-  overflow-y: auto;
+  overflow: visible;
 }
 body.flip #content {
   opacity: 1;
 }
 body.flip #book {
-  transform: translate(0, -100%);
-  -ms-transform: translate(0, -100%);
-  -moz-transform: translate(0, -100%);
-  -webkit-transform: translate(0, -100%);
-  -o-transform: translate(0, -100%);
+  transform: translate(0, -90%);
+  -ms-transform: translate(0, -90%);
+  -moz-transform: translate(0, -90%);
+  -webkit-transform: translate(0, -90%);
+  -o-transform: translate(0, -90%);
 }
