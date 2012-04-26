@@ -33,7 +33,7 @@ $(document).ready(function() {
     output.getSession().setMode(new SCSSMode());
     output.setShowPrintMargin(false);
     output.env.editor.renderer.setHScrollBarAlwaysVisible(false);
-    output.insert('#hello {\n    color: blue;\n\n    #buddy {\n    	background: red;\n    }\n}');
+    output.insert('#hello {\n    color: blue;\n    #buddy {\n    	background: red;\n    }\n}');
     
     input = ace.edit("input");
     
