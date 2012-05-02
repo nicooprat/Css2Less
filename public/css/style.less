@@ -123,7 +123,7 @@
 
 
 html {
-    background: url(img/bg_html.gif);
+    background: url(img/bg_html.jpeg);
     height: 100%;
     max-width: 100%;
 
@@ -171,8 +171,9 @@ html {
         	h2 {
         		font-family: @chunk;
         		font-size: 2em;
-        		color: #fff;
-        		text-shadow: 0 1px 0 #000;
+        		color: rgba(0,0,0,.65) !important;
+        		color: #332817;
+                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
         		margin: 1em 0 .5em;
         		font-weight: 100;
         		letter-spacing: 1px;
@@ -184,9 +185,9 @@ html {
         		line-height: 1.6em;
         		margin-bottom: 1em;
         		font-family: Helvetica, sans-serif;
-        		color: rgba(255,255,255,.75) !important;
-        		color: #fff;
-        		text-shadow: 0 1px 0 #000;
+    			color: rgba(0,0,0,.7) !important;
+    			color: #332817;
+        		text-shadow: 0 1px 0 rgba(255,255,255,.15);
         		
         		a {
             		color: inherit;
@@ -420,6 +421,6 @@ body.flip {
     }
             
     #book {
-        .transform( translate( 0 , -90% ) );
+        .transform( translate3d( 0 , -90% , 0 ) );
     }
 }

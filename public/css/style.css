@@ -41,7 +41,7 @@
 /* 3. Containers
 -------------------- */
 html {
-  background: url(img/bg_html.gif);
+  background: url(img/bg_html.jpeg);
   height: 100%;
   max-width: 100%;
 }
@@ -93,8 +93,9 @@ html body #content h1 a {
 html body #content h2 {
   font-family: "Chunk Five";
   font-size: 2em;
-  color: #fff;
-  text-shadow: 0 1px 0 #000;
+  color: rgba(0, 0, 0, 0.65) !important;
+  color: #332817;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
   margin: 1em 0 .5em;
   font-weight: 100;
   letter-spacing: 1px;
@@ -105,9 +106,9 @@ html body #content p {
   line-height: 1.6em;
   margin-bottom: 1em;
   font-family: Helvetica, sans-serif;
-  color: rgba(255, 255, 255, 0.75) !important;
-  color: #fff;
-  text-shadow: 0 1px 0 #000;
+  color: rgba(0, 0, 0, 0.7) !important;
+  color: #332817;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 html body #content p a {
   color: inherit;
@@ -382,9 +383,9 @@ body.flip #content {
   opacity: 1;
 }
 body.flip #book {
-  transform: translate(0, -90%);
-  -ms-transform: translate(0, -90%);
-  -moz-transform: translate(0, -90%);
-  -webkit-transform: translate(0, -90%);
-  -o-transform: translate(0, -90%);
+  transform: translate3d(0, -90%, 0);
+  -ms-transform: translate3d(0, -90%, 0);
+  -moz-transform: translate3d(0, -90%, 0);
+  -webkit-transform: translate3d(0, -90%, 0);
+  -o-transform: translate3d(0, -90%, 0);
 }
