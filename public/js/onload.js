@@ -79,19 +79,27 @@ function convert()
         url = '/convert';
         
     // If input is not empty
+    console.log( term.length );
     if( term )
     {
-        // Start timer
-        timer = setTimeout(function()
-        {        
-            // AJAX    
-            $.post( url, { css: term },
-                function( data ) {
-                    // Set output
-                    output.getSession().setValue( data );
-                }
-            );
-        },500);
+        if( term.length > 50000 )
+        {
+            alert('Input CSS is too long ('+term.length+' caracters) ! Sorry about that, we hope to increase that 50K caracters soon.')
+        }
+        else
+        {
+            // Start timer
+            timer = setTimeout(function()
+            {        
+                // AJAX    
+                $.post( url, { css: term },
+                    function( data ) {
+                        // Set output
+                        output.getSession().setValue( data );
+                    }
+                );
+            },500);
+        }
     }
     else
     {
