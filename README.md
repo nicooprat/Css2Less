@@ -4,6 +4,8 @@ __If you want to submit issues or get involved in the Css2Less development, plea
 
 [https://github.com/thomaspierson/libcss2less](https://github.com/thomaspierson/libcss2less)
 
+---
+
 ### WTF ?
 
 This tool has been thought for front-end developers who are tired of working with CSS. Here you can quickly convert your old CSS files to fresh new LESS files.    
@@ -11,7 +13,7 @@ As easy as copy/paste. You can also convert files locally by install the [css2le
 
 ### Credits
 
-This service use css2less library which is a ruby library refactored and Gemified by [Thomas Pierson](https://github.com/thomaspierson/libcss2less) and based 
+This service use the Css2Less library which is a ruby library refactored and Gemified by [Thomas Pierson](https://github.com/thomaspierson/libcss2less) and based 
 on a script initially written by [Marcin Kulik](https://github.com/sickill/css2less).
 
 This website interface was created by [Nico Prat](https://twitter.com/#!/nicooprat) and [Thomas Pierson](http://thomaspierson.fr/) under AGPL-3 an licence.
